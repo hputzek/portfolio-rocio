@@ -21,15 +21,23 @@ module.exports = {
   ** Load Plugins
   */
   plugins: [
-      '~plugins/swiper-plugin.js',
-    ],
-    css: [
-      'swiper/dist/css/swiper.css'
-    ],
+    '~plugins/swiper-plugin.js'
+  ],
+  css: [
+    'swiper/dist/css/swiper.css'
+  ],
+  // responsiveLoader: {
+  //   sizes: [300, 600, 1200, 2000],
+  //   placeholder: true,
+  //   placeholderSize: 50
+  // },
   /*
   ** Build configuration
   */
   build: {
+    loaders: [
+      {}
+    ],
     /*
     ** Run ESLINT on save
     */

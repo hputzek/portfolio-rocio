@@ -13,15 +13,18 @@
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
       </div>
     </div>
+    <responsive/>
   </section>
 </template>
 
 <script>
 import Logo from '~components/Logo.vue'
+import Responsive from '~components/Responsive.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Responsive
   }
 }
 </script>
