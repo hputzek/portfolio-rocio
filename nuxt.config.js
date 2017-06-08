@@ -1,3 +1,4 @@
+let webpack = require('webpack')
 module.exports = {
   /*
   ** Headers of the page
@@ -26,11 +27,6 @@ module.exports = {
   css: [
     'swiper/dist/css/swiper.css'
   ],
-  // responsiveLoader: {
-  //   sizes: [300, 600, 1200, 2000],
-  //   placeholder: true,
-  //   placeholderSize: 50
-  // },
   /*
   ** Build configuration
   */
@@ -50,6 +46,16 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      config.plugins.push( new webpack.LoaderOptionsPlugin({
+        // test: /\.xxx$/, // may apply this only for some modules
+        options: {
+          responsiveLoader: {
+            sizes: [300, 600, 1200, 2000],
+            placeholder: true,
+            placeholderSize: 50
+          }
+        }
+      }))
     }
   }
 }
