@@ -1,12 +1,23 @@
 <template>
   <!-- You can find this swiper instance object in current compomemt by the "mySwiper"  -->
-  <div v-swiper:mySwiper="swiperOption">
+  <div v-swiper:verticalSwiper="verticalSwiperOptions">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="banner in banners">
-        <div class="bg-img" v-bind:style="{ 'background-image': 'url(' + banner + ')'}"></div>
+    <div class="swiper-slide">
+      <div v-swiper:horizontalSwiper="horizontalSwiperOptions">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="banner in banners">
+            <div class="bg-img" v-bind:style="{ 'background-image': 'url(' + banner + ')'}"></div>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets"></div>
       </div>
     </div>
-    <div class="swiper-pagination swiper-pagination-bullets"></div>
+    <div class="swiper-slide">Vertical Slide 2</div>
+    <div class="swiper-slide">Vertical Slide 3</div>
+    <div class="swiper-slide">Vertical Slide 4</div>
+    <div class="swiper-slide">Vertical Slide 5</div>
+    <div class="swiper-pagination swiper-pagination-v" slot="pagination"></div>
+  </div>
   </div>
 </template>
 
@@ -19,7 +30,10 @@
           'https://placeimg.com/640/480/people',
           'https://placeimg.com/640/480/tech'
         ],
-        swiperOption: {
+        horizontalSwiperOptions: {
+          mousewheelControl: true,
+          mousewheelForceToAxis: true,
+          keyboardControl: true,
           autoplay: 5000,
           initialSlide: 1,
           direction: 'horizontal',
@@ -32,6 +46,15 @@
           onTap: swiper => {
             console.log('onTap', swiper.realIndex)
           }
+        },
+        verticalSwiperOptions: {
+          keyboardControl: true,
+          mousewheelControl: true,
+          mousewheelForceToAxis: true,
+          pagination: '.swiper-pagination-v',
+          paginationClickable: true,
+          direction: 'vertical',
+          spaceBetween: 50
         }
       }
     },
@@ -44,7 +67,7 @@
       console.log(
         'This is current swiper instance object', this.mySwiper,
         'I will slideTo banners 3')
-      this.mySwiper.slideTo(3)
+      this.horizontalSwiper.slideTo(3)
     }
   }
 </script>
