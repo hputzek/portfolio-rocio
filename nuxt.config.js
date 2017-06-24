@@ -1,5 +1,14 @@
 let webpack = require('webpack')
 module.exports = {
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        path: '/projekte/*',
+        component: resolve(__dirname, 'pages/projekte.vue'),
+        name: 'catch all routes created by slider on projects page'
+      })
+    }
+  },
   /*
   ** Headers of the page
   */
@@ -46,7 +55,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-      config.plugins.push( new webpack.LoaderOptionsPlugin({
+      config.plugins.push ( new webpack.LoaderOptionsPlugin({
         // test: /\.xxx$/, // may apply this only for some modules
         options: {
           responsiveLoader: {
