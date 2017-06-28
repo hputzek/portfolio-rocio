@@ -55,7 +55,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-      config.plugins.push ( new webpack.LoaderOptionsPlugin({
+      config.plugins.push(new webpack.LoaderOptionsPlugin({
         // test: /\.xxx$/, // may apply this only for some modules
         options: {
           responsiveLoader: {
