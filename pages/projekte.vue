@@ -25,15 +25,33 @@
             name: 'Projekt 1',
             slides: [
               {
-                headline: 'This is slider number one',
-                images: [
-                  'https://placeimg.com/640/480/nature',
-                  'https://placeimg.com/640/480/people',
-                  'https://placeimg.com/640/480/tech'
+                elements: [
+                  {
+                    type: 'headline des ersten Slides',
+                    content: 'This is some headline',
+                    positionLeftInPercent: 10,
+                    positionTopInPercent: 50,
+                    zIndex: 1
+                  },
+                  {
+                    type: 'headline',
+                    content: 'This is another headline',
+                    positionLeftInPercent: 30,
+                    positionTopInPercent: 10,
+                    zIndex: 1
+                  }
                 ]
               },
               {
-                headline: 'headline number two'
+                elements: [
+                  {
+                    type: 'headline',
+                    content: 'This is some headline',
+                    positionLeftInPercent: 40,
+                    positionTopInPercent: 30,
+                    zIndex: 1
+                  }
+                ]
               }
             ]
           },
@@ -41,41 +59,26 @@
             name: 'Projekt 2',
             slides: [
               {
-                headline: 'Slide 1'
+                elements: [
+                  {
+                    type: 'headline',
+                    content: 'This is some headline',
+                    positionLeftInPercent: 10,
+                    positionTopInPercent: 10,
+                    zIndex: 1
+                  }
+                ]
               },
               {
-                headline: 'Slide 2'
-              },
-              {
-                headline: 'Slide 3'
-              }
-            ]
-          },
-          {
-            name: 'Projekt 3',
-            slides: [
-              {
-                headline: 'Slide 1'
-              },
-              {
-                headline: 'Slide 2'
-              },
-              {
-                headline: 'Slide 3'
-              }
-            ]
-          },
-          {
-            name: 'Projekt 4',
-            slides: [
-              {
-                headline: 'Slide 1'
-              },
-              {
-                headline: 'Slide 2'
-              },
-              {
-                headline: 'Slide 3'
+                elements: [
+                  {
+                    type: 'headline',
+                    content: 'This is some headline',
+                    positionLeftInPercent: 40,
+                    positionTopInPercent: 50,
+                    zIndex: 1
+                  }
+                ]
               }
             ]
           }
@@ -124,5 +127,13 @@
   .swiper-wrapper {
     height: 100vh;
     width: 100vw;
+  }
+</style>
+
+<style lang="scss">
+  @media screen and (min-width: 25em){
+    html {
+      font-size: calc( 16px + (22 - 16) * (100vw - 400px) / (800 - 400) );
+    }
   }
 </style>

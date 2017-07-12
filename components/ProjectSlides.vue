@@ -4,8 +4,9 @@
             <div class="swiper-wrapper">
                 <template  v-for="(slide, slideIndex) in project.slides">
                     <div class="swiper-slide" :data-history="slug + (slideIndex + 1)" :key="slideIndex + slug">
-                        <h1>{{ project.name}}</h1>
-                        <p>{{slide.headline}}</p>
+                        <template v-for="element in slide.elements">
+                            <Headline :content="element.content" :positionLeftInPercent="element.positionLeftInPercent" :positionTopInPercent="element.positionTopInPercent" :zIndex="element.zIndex"></Headline>
+                        </template>
                     </div>
                 </template>
             </div>
@@ -15,7 +16,11 @@
 </template>
 
 <script>
+import Headline from '~components/slideComponents/Headline.vue'
 export default {
+  components: {
+    Headline
+  },
   data () {
     return {
 
@@ -66,8 +71,6 @@ export default {
     .swiper-slide {
         position: relative;
         text-align: center;
-        font-size: 38px;
-        font-weight: 700;
         background-color: #eee;
         display: flex;
         justify-content: center;
