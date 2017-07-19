@@ -28,7 +28,7 @@
       getTopPercentageFromAspectRatio: function (positionTopInPercent) {
         let aspectRatio = this.targetAspectRatio.split(':')
         console.log(aspectRatio[1] / aspectRatio[0])
-        return (positionTopInPercent * (1 - aspectRatio[1] / aspectRatio[0]))
+        return positionTopInPercent * ((1 - (aspectRatio[1]) / (aspectRatio[0]) / 2))
       }
     }
   }

@@ -48,7 +48,7 @@
                     type: 'headline',
                     content: 'This is some headline',
                     positionLeftInPercent: 40,
-                    positionTopInPercent: 30,
+                    positionTopInPercent: 50,
                     zIndex: 1
                   }
                 ]
@@ -64,7 +64,7 @@
                     type: 'headline',
                     content: 'This is some headline',
                     positionLeftInPercent: 10,
-                    positionTopInPercent: 10,
+                    positionTopInPercent: 50,
                     zIndex: 1
                   }
                 ]
