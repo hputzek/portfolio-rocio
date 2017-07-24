@@ -12,30 +12,30 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     label: "Projekte"
     files:
-      name: "projects"
-      label: "Projekte"
-      description: "Projekte, die im Slider angezeigt werden"
-      file: "static/data/projekte.json"
-      fields:
-        - label: "Projekt"
-          name: "project"
-          widget: "list"
-          fields:
-            - label: "Seite"
-              name: "slide"
-              widget: "list"
-              fields:
-                - {label: "Seitentitel", name: "title", widget: "string"}
-                - label: "Seiteninhalte"
-                  name: "elements"
-                  widget: "object"
-                  fields:
-                    - label: "Überschriften"
-                      name: "list"
-                      widget: "list"
-                      fields:
-                        - {label: "headline", name: "type", widget: "hidden", default: "hidden"}
-                        - {label: "Überschrift", name: "content", widget: "string"}
-                        - {label: "Abstand links in %", name: "positionLeftInPercent", widget: "number"}
-                        - {label: "Abstand von oben in %", name: "positionTopInPercent", widget: "number"}
-                        - {label: "z-index", name: "zIndex", widget: "number"}
+      - name: "projects"
+        label: "Projekte"
+        description: "Projekte, die im Slider angezeigt werden"
+        file: "static/data/projekte.json"
+        fields:
+          - label: "Projekt"
+            name: "project"
+            widget: "list"
+            fields:
+              - label: "Seite"
+                name: "slide"
+                widget: "list"
+                fields:
+                  - {label: "Seitentitel", name: "title", widget: "string"}
+                  - label: "Seiteninhalte"
+                    name: "elements"
+                    widget: "object"
+                    fields:
+                      - label: "Überschriften"
+                        name: "list"
+                        widget: "list"
+                        fields:
+                          - {label: "headline", name: "type", widget: "hidden", default: "hidden"}
+                          - {label: "Überschrift", name: "content", widget: "string"}
+                          - {label: "Abstand links in %", name: "positionLeftInPercent", widget: "number"}
+                          - {label: "Abstand von oben in %", name: "positionTopInPercent", widget: "number"}
+                          - {label: "z-index", name: "zIndex", widget: "number"}
