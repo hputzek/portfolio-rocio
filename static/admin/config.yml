@@ -31,7 +31,7 @@ collections: # A list of collections the CMS should be able to edit
                     widget: "object"
                     fields:
                       - label: "Überschriften"
-                        name: "list"
+                        name: "headlines"
                         widget: "list"
                         fields:
                           - {label: "headline", name: "type", widget: "hidden", default: "hidden"}
