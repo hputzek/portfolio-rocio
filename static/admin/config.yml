@@ -8,10 +8,13 @@ media_folder: "assets/images/uploads" # Media files will be stored in the repo u
 public_folder: "/" # The src attribute for uploaded media will begin this path
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "projects" # all the things in one entry, for documentation and quick testing
+  - name: "projects-collection" # all the things in one entry, for documentation and quick testing
     create: true # Allow users to create new documents in this collection
     label: "Projekte"
     files:
+      name: "projects"
+      label: "Projekte"
+      description: "Projekte, die im Slider angezeigt werden"
       file: "static/data/projekte.json"
       fields:
         - label: "Projekt"
