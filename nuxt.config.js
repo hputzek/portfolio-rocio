@@ -40,8 +40,14 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    loaders: [
-      {}
+    loaders: [{
+      test: /\.(jpe?g|png)$/,
+      loader: 'responsive-loader',
+      options: {
+        // If you want to enable sharp support:
+        // adapter: require('responsive-loader/sharp')
+      }
+    }
     ],
     /*
     ** Run ESLINT on save

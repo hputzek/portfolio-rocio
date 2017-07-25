@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    const leImage = require('responsive-loader!~assets/images/demo.jpg')
+    const leImage = require('assets/images/' + 'demo.jpg')
     export default {
       data () {
         return {
