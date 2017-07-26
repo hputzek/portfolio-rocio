@@ -2,7 +2,7 @@
     <div class="image-wrap" v-bind:style="wrapperStyle">
         <div class="backdrop" v-bind:style="backdropStyle">
         </div>
-        <img v-bind:src="responsiveImage.src" v-bind:srcSet="responsiveImage.srcSet" />
+        <img v-bind:src="src.src" v-bind:srcSet="src.srcSet" />
     </div>
 </template>
 
@@ -11,25 +11,27 @@
     export default {
       data () {
         return {
-          responsiveImage: leImage
         }
       },
       computed: {
         wrapperStyle: function () {
           return {
-            height: this.width * (this.responsiveImage.height / this.responsiveImage.width) + 'px',
-            width: '350px'
+            width: this.width,
+            height: this.width * (images[this.src].height / images[this.src].width) + 'px'
           }
         },
         backdropStyle: function () {
           return {
-            backgroundImage: 'url("' + this.responsiveImage.placeholder + '")',
+            backgroundImage: 'url("' + images[this.src].placeholder + '")',
             backgroundSize: 'cover'
           }
         }
       },
       created: function () {
-        console.log(leImage)
+      },
+      props: {
+        width: Number,
+        src: Object
       }
     }
 </script>

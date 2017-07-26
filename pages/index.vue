@@ -18,12 +18,12 @@
 
 <script>
 import Logo from '~components/Logo.vue'
-import Responsive from '~components/Responsive.vue'
+import ResponsiveImage from '~components/ResponsiveImage.vue'
 
 export default {
   components: {
     Logo,
-    Responsive
+    ResponsiveImage
   }
 }
 </script>
