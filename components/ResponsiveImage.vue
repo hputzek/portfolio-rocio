@@ -2,12 +2,12 @@
     <div class="image-wrap" v-bind:style="wrapperStyle">
         <div class="backdrop" v-bind:style="backdropStyle">
         </div>
-        <img v-bind:src="src.src" v-bind:srcSet="src.srcSet" />
+        <img v-bind:src="imageObject" v-bind:srcSet="imageObject.srcSet" />
     </div>
 </template>
 
 <script>
-    const leImage = require('assets/images/' + 'demo.jpg')
+    const images = require('glob-loader!./../images.pattern')
     export default {
       data () {
         return {
@@ -16,22 +16,28 @@
       computed: {
         wrapperStyle: function () {
           return {
-            width: this.width,
-            height: this.width * (images[this.src].height / images[this.src].width) + 'px'
+            width: this.width + 'px',
+            height: this.width * (this.imageObject.height / this.imageObject.width) + 'px'
           }
         },
         backdropStyle: function () {
           return {
-            backgroundImage: 'url("' + images[this.src].placeholder + '")',
+            backgroundImage: 'url("' + this.imageObject.placeholder + '")',
             backgroundSize: 'cover'
           }
+        },
+        fullImagePath: function () {
+          return './assets/images/' + this.src
+        },
+        imageObject: function () {
+          return images[this.fullImagePath]
         }
       },
       created: function () {
       },
       props: {
-        width: Number,
-        src: Object
+        width: String,
+        src: String
       }
     }
 </script>
